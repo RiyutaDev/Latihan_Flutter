@@ -17,7 +17,7 @@ void main() {
     final isiTeks = richText.text.toPlainText();
 
 
-    expect(isiTeks, contains('Hai gaes!'));
+    expect(isiTeks, contains('Hallo world!'));
     expect(isiTeks, contains('Saya Rizki Riana Putra'));
     expect(isiTeks, contains('Saya sedang belajar'));
     expect(isiTeks, contains('Text styling Flutter'));
