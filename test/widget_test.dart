@@ -1,30 +1,27 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:latihan_hallo/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Teks latihan Flutter tampil', (tester) async {
+    await tester.pumpWidget(const MyWidget());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+   
+    final richTextFinder = find.byType(RichText);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(richTextFinder, findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    
+    final richText = tester.widget<RichText>(richTextFinder);
+    final isiTeks = richText.text.toPlainText();
+
+
+    expect(isiTeks, contains('Hai gaes!'));
+    expect(isiTeks, contains('Saya Rizki Riana Putra'));
+    expect(isiTeks, contains('Saya sedang belajar'));
+    expect(isiTeks, contains('Text styling Flutter'));
+    expect(isiTeks, contains('Teks yang mudah dibaca'));
+    expect(isiTeks, contains('Semangat belajarnya!'));
   });
 }
