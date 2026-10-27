@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latihan_hallo/main.dart';
+import 'package:latihan_hallo/main1.dart';
 
 void main() {
   testWidgets('Teks latihan Flutter tampil', (tester) async {
